@@ -1,0 +1,28 @@
+services:
+  api:
+    hostname: api
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "5100:5100"
+    env_file:
+      - .env
+    depends_on:
+      - db
+  db:
+    image: postgres:14-alpine
+    hostname: db
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db:/var/lib/postgresql/data
+      - ./postgres/create-tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+  adminer:
+    image: adminer
+    ports:
+      - 8085:8080
