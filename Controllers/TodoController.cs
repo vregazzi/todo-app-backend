@@ -6,7 +6,6 @@ using TodoApp.Models;
 namespace TodoApp.Controllers;
 
 [ApiController]
-[EnableCors("AllowLocalhost")]
 [Route("/todo")]
 public class ArticlesController(ILoggerFactory logger) : Controller
 {
