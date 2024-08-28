@@ -1,23 +1,23 @@
 services:
   api:
-    hostname: api
-    image: mcr.microsoft.com/dotnet/sdk:8.0
+    # hostname: api
+    image: mcr.microsoft.com/devcontainers/dotnet:1-8.0-bookworm
     volumes:
-      - ./:/src
-    ports:
-      - "5100:5100"
-    env_file:
-      - .env
+      - ../:/src
+    # ports:
+    #   - "5100:5001"
+    # env_file:
+    #   - ../.env
     depends_on:
       - db
     command: sleep infinity
   db:
     image: postgres:14-alpine
-    hostname: db
+    # hostname: db
     ports:
       - "5432:5432"
     volumes:
-      - ./db:/var/lib/postgresql/data
+      - ../db:/var/lib/postgresql/data
       - ./postgres/create-tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
     environment:
       POSTGRES_USER: postgres

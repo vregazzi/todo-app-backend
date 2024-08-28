@@ -1,0 +1,19 @@
+{
+	"name": "C# (.NET) and PostgreSQL",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "api",
+	"workspaceFolder": "/src/",
+	"customizations": {
+		"vscode": {
+			"settings": {},
+			"extensions": [
+				"ms-dotnettools.csdevkit",
+				"ms-azuretools.vscode-docker",
+				"csharpier.csharpier-vscode"
+			]
+		}
+	},
+	"postCreateCommand": {
+		"generateCerts": "bash .devcontainer/postCreateCommand.sh"
+	}
+}
