@@ -266,8 +266,6 @@ paket-files/
 __pycache__/
 *.pyc
 
-.vscode/
-
 *.env
 
 db/*
