@@ -3,8 +3,6 @@ services:
     image: mcr.microsoft.com/devcontainers/dotnet:1-8.0-bookworm
     volumes:
       - ../:/src
-    depends_on:
-      - db
     environment:
       DOTNET_ENVIRONMENT: Development
       ASPNETCORE_ENVIRONMENT: Development
@@ -14,7 +12,6 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - ../db:/var/lib/postgresql/data
       - ./postgres/create-tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
     environment:
       POSTGRES_USER: postgres
