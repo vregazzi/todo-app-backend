@@ -1,19 +1,16 @@
 services:
   api:
-    # hostname: api
     image: mcr.microsoft.com/devcontainers/dotnet:1-8.0-bookworm
     volumes:
       - ../:/src
-    # ports:
-    #   - "5100:5001"
-    # env_file:
-    #   - ../.env
     depends_on:
       - db
+    environment:
+      DOTNET_ENVIRONMENT: Development
+      ASPNETCORE_ENVIRONMENT: Development
     command: sleep infinity
   db:
     image: postgres:14-alpine
-    # hostname: db
     ports:
       - "5432:5432"
     volumes:
