@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "C#: Todo Debug",
+            "name": "C#: todo-backend",
             "type": "dotnet",
             "request": "launch",
             "projectPath": "${workspaceFolder}/todo-backend.csproj"
