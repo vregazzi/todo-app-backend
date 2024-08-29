@@ -6,6 +6,7 @@ services:
     environment:
       DOTNET_ENVIRONMENT: Development
       ASPNETCORE_ENVIRONMENT: Development
+      DB_CONNECTION_STRING: "User ID=postgres;Password=postgres;Host=db;Port=5432;Database=postgres;Pooling=true;Connection Lifetime=0;"
     command: sleep infinity
   db:
     image: postgres:14-alpine
