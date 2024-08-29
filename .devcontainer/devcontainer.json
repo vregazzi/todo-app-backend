@@ -9,7 +9,8 @@
 			"extensions": [
 				"ms-dotnettools.csdevkit",
 				"ms-azuretools.vscode-docker",
-				"csharpier.csharpier-vscode"
+				"csharpier.csharpier-vscode",
+				"ms-dotnettools.vscodeintellicode-csharp"
 			]
 		}
 	},
